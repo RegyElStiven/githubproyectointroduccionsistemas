@@ -292,40 +292,40 @@
 		</section>
 	</main>
 	<script type="text/javascript">
-					document.addEventListener('DOMContentLoaded', () => {
+			document.addEventListener('DOMContentLoaded', () => {
 			const botones = document.querySelectorAll('.btn-menu');
 			const secciones = document.querySelectorAll('section');
 
 			// Función para ocultar todas las secciones que no esten siendo seleccionadas
 			function ocultarSecciones() {
-				secciones.forEach(sec => {
-					sec.style.display = 'none';
+			secciones.forEach(sec => {
+			sec.style.display = 'none';
 				});
 			}
 
 			// Función para quitar la clase active de todos los botones
 			function quitarActiveBotones() {
-				botones.forEach(boton => {
-					boton.classList.remove('active');
+			botones.forEach(boton => {
+			boton.classList.remove('active');
 				});
 			}
 
 			// Muestra la primera seccion y coloca el primer boton como activo
 			if(secciones.length > 0) {
-				ocultarSecciones();
-				secciones[0].style.display = 'block';
-				botones[0].classList.add('active');
+			ocultarSecciones();
+			secciones[0].style.display = 'block';
+			botones[0].classList.add('active');
 			}
 
 			botones.forEach(boton => {
-				boton.addEventListener('click', () => {
-					const idSeccion = boton.getAttribute('data-target');
-					const seccionMostrar = document.getElementById(idSeccion);
-					if (seccionMostrar) {
-						ocultarSecciones();
-						quitarActiveBotones();
-						seccionMostrar.style.display = 'block';
-						boton.classList.add('active');
+			boton.addEventListener('click', () => {
+			const idSeccion = boton.getAttribute('data-target');
+			const seccionMostrar = document.getElementById(idSeccion);
+			if (seccionMostrar) {
+			ocultarSecciones();
+			quitarActiveBotones();
+			seccionMostrar.style.display = 'block';
+			boton.classList.add('active');
 					}
 				});
 			});
